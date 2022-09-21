@@ -9,9 +9,9 @@ Fs = A.fs;              % Se renombra la frecuencia de muestreo.
 ymax = max(max(abs(x)));
 
 % Redondeo a un número menor de bits.
-nbits = 2;          % Nuevo número de bits a utilizar en cada canal.
+nbits = 5;          % Nuevo número de bits a utilizar en cada canal. n_orig=2
 delta = ymax*(2^(-nbits))*2;
-niveles = -ymax:delta:ymax-delta;
+niveles = -ymax:delta:ymax-delta; 
 yround = round(x/delta)*delta;
 
 % Esto realmente deja 2^n+1 niveles, porque permite yround = ymax
